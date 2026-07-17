@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLG Club Deal — Baixar o aplicativo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Baixe o aplicativo FLG Club Deal para Windows e macOS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/flg_black.png">
+<style>
+  :root{
+    --paper:#F5F3EE; --paper2:#EFECE3; --ink:#141312; --ink-70:rgba(20,19,18,.7); --ink-55:rgba(20,19,18,.55); --ink-38:rgba(20,19,18,.38); --line:rgba(20,19,18,.12);
+    --gold:#A9834C; --gold-bright:#C89A57; --gold-dim:#7E6035;
+    --band:#0E0E0C; --on-band:#F1EEE7; --on-band-55:rgba(241,238,231,.55); --on-band-38:rgba(241,238,231,.38);
+    --font-sans:"Geist","Geist Sans",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --font-mono:"Geist Mono","JetBrains Mono",ui-monospace,"SF Mono","Cascadia Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:var(--gold);text-decoration:none;}
+  a:hover{color:var(--gold-dim);}
+  p{text-wrap:pretty;}
+  ::selection{background:rgba(169,131,76,.24);}
+  @keyframes flg-rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes flg-in{from{opacity:0;transform:translateY(20px) scale(.985);}to{opacity:1;transform:translateY(0) scale(1);}}
+  .dl-btn{display:flex;align-items:center;gap:15px;background:var(--paper);color:var(--ink);padding:16px 28px 16px 25px;border-radius:13px;min-width:242px;box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 14px 34px rgba(0,0,0,.42);transition:transform .18s cubic-bezier(.16,1,.3,1),box-shadow .18s cubic-bezier(.16,1,.3,1);}
+  .dl-btn:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--gold),0 18px 44px rgba(0,0,0,.5);color:var(--ink);}
+  .dl-btn[aria-disabled="true"]{opacity:.45;pointer-events:none;}
+  .dl-soon{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dim);border:1px solid var(--gold-dim);border-radius:5px;padding:2px 5px;margin-left:2px;}
+</style>
+</head>
+<body>
+<div style="position:relative;z-index:1;">
+
+  <section style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(84px,15vh,168px) 24px clamp(52px,9vh,104px);">
+    <div aria-hidden="true" style="position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:min(680px,92vw);height:520px;pointer-events:none;background:radial-gradient(circle at 50% 50%, rgba(169,131,76,.16), rgba(169,131,76,.05) 42%, transparent 70%);filter:blur(10px);"></div>
+
+    <div style="position:relative;display:inline-flex;align-items:center;gap:clamp(18px,2.4vw,30px);animation:flg-in .7s cubic-bezier(.16,1,.3,1) both;">
+      <img src="assets/logotipo.png" alt="FLG Club Deal" style="display:block;height:clamp(64px,8.4vw,104px);width:auto;">
+      <span aria-hidden="true" style="width:1px;height:clamp(48px,6vw,76px);background:var(--ink-38);"></span>
+      <img src="assets/flg_black.png" alt="FLG" style="display:block;height:clamp(38px,5vw,62px);width:auto;">
+    </div>
+
+    <div style="position:relative;display:inline-flex;align-items:center;gap:16px;margin-top:clamp(28px,4vh,44px);animation:flg-rise .7s cubic-bezier(.16,1,.3,1) .1s both;">
+      <span style="width:32px;height:1px;background:var(--ink-38);"></span>
+      <span style="font-family:var(--font-sans);font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.46em;text-indent:.46em;color:var(--ink-70);">CLUB DEAL</span>
+      <span style="width:32px;height:1px;background:var(--ink-38);"></span>
+    </div>
+
+    <p style="position:relative;font-family:var(--font-sans);font-size:clamp(16px,1.7vw,21px);font-weight:400;line-height:1.5;color:var(--ink-55);max-width:34ch;margin-top:20px;animation:flg-rise .7s cubic-bezier(.16,1,.3,1) .18s both;">Deals estruturados, reunidos em um só lugar.</p>
+  </section>
+
+  <section id="baixar" style="position:relative;width:100%;background:var(--band);overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(760px,94vw);height:340px;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%, rgba(169,131,76,.2), transparent 66%);filter:blur(14px);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(62% 150% at 50% 50%, rgba(14,14,12,.82) 34%, rgba(14,14,12,.35) 78%, transparent 100%);"></div>
+
+    <div style="position:relative;z-index:1;max-width:960px;margin:0 auto;padding:clamp(52px,8vw,92px) 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(26px,4vw,36px);text-align:center;">
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.38em;text-indent:.38em;color:var(--gold-bright);">BAIXE O APLICATIVO</span>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
+        <a id="dl-win" class="dl-btn" href="https://github.com/murilocuby/flg-releases/releases/latest" download>
+          <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none;"><path d="M3 4.6 10.4 3.5v7.4H3V4.6Z"></path><path d="M11.5 3.35 21 2v8.9h-9.5V3.35Z"></path><path d="M3 13.1h7.4v7.4L3 19.4V13.1Z"></path><path d="M11.5 13.1H21V22l-9.5-1.35V13.1Z"></path></svg>
+          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;">
+            <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);">Baixar para</span>
+            <span style="font-family:var(--font-sans);font-size:17px;font-weight:600;letter-spacing:-.01em;">Windows</span>
+          </span>
+        </a>
+        <a id="dl-mac" class="dl-btn" href="https://github.com/murilocuby/flg-releases/releases/latest">
+          <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09Zm-5.02-13.03c-.15-2.23 1.66-4.08 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"></path></svg>
+          <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;">
+            <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);">Baixar para</span>
+            <span style="font-family:var(--font-sans);font-size:17px;font-weight:600;letter-spacing:-.01em;">macOS</span>
+          </span>
+        </a>
+      </div>
+      <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--on-band-38);">Windows 10/11 &nbsp;·&nbsp; macOS 12 ou superior</span>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid var(--line);">
+    <div style="max-width:1080px;margin:0 auto;padding:30px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <img src="assets/logotipo.png" alt="FLG Club Deal" style="display:block;height:26px;width:auto;">
+        <span aria-hidden="true" style="width:1px;height:20px;background:var(--line);"></span>
+        <img src="assets/flg_black.png" alt="FLG" style="display:block;height:15px;width:auto;">
+      </div>
+      <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--ink-38);">© 2026 FLG</span>
+    </div>
+  </footer>
+
+</div>
+<script>
+  /* Aponta os botões pro instalador MAIS RECENTE do flg-releases (repo público)
+     via a API do GitHub — assim a landing nunca precisa ser reeditada quando sai
+     versão nova. Fallback: os href já apontam pra página de releases. */
+  (async () => {
+    try {
+      const r = await fetch("https://api.github.com/repos/murilocuby/flg-releases/releases/latest");
+      if (!r.ok) return;
+      const assets = (await r.json()).assets || [];
+      const find = (suf) => assets.find((a) => a.name.toLowerCase().endsWith(suf));
+      const win = find("-setup.exe");
+      const mac = find(".dmg");
+      const winBtn = document.getElementById("dl-win");
+      const macBtn = document.getElementById("dl-mac");
+      if (win && winBtn) winBtn.href = win.browser_download_url;
+      if (mac && macBtn) macBtn.href = mac.browser_download_url;
+    } catch (e) {
+      /* offline / API indisponível — mantém o link pra página de releases */
+    }
+  })();
+</script>
+</body>
+</html>
