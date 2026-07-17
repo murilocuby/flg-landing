@@ -61,14 +61,14 @@
     <div style="position:relative;z-index:1;max-width:960px;margin:0 auto;padding:clamp(52px,8vw,92px) 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(26px,4vw,36px);text-align:center;">
       <span style="font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.38em;text-indent:.38em;color:var(--gold-bright);">BAIXE O APLICATIVO</span>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
-        <a id="dl-win" class="dl-btn" href="https://github.com/murilocuby/flg-releases/releases/latest" download>
+        <a id="dl-win" class="dl-btn" href="FLG-Club-Deal-Setup.exe" download>
           <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none;"><path d="M3 4.6 10.4 3.5v7.4H3V4.6Z"></path><path d="M11.5 3.35 21 2v8.9h-9.5V3.35Z"></path><path d="M3 13.1h7.4v7.4L3 19.4V13.1Z"></path><path d="M11.5 13.1H21V22l-9.5-1.35V13.1Z"></path></svg>
           <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;">
             <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);">Baixar para</span>
             <span style="font-family:var(--font-sans);font-size:17px;font-weight:600;letter-spacing:-.01em;">Windows</span>
           </span>
         </a>
-        <a id="dl-mac" class="dl-btn" href="https://github.com/murilocuby/flg-releases/releases/latest">
+        <a id="dl-mac" class="dl-btn" href="FLG-Club-Deal.dmg" download>
           <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09Zm-5.02-13.03c-.15-2.23 1.66-4.08 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"></path></svg>
           <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;">
             <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-55);">Baixar para</span>
@@ -92,26 +92,5 @@
   </footer>
 
 </div>
-<script>
-  /* Aponta os botões pro instalador MAIS RECENTE do flg-releases (repo público)
-     via a API do GitHub — assim a landing nunca precisa ser reeditada quando sai
-     versão nova. Fallback: os href já apontam pra página de releases. */
-  (async () => {
-    try {
-      const r = await fetch("https://api.github.com/repos/murilocuby/flg-releases/releases/latest");
-      if (!r.ok) return;
-      const assets = (await r.json()).assets || [];
-      const find = (suf) => assets.find((a) => a.name.toLowerCase().endsWith(suf));
-      const win = find("-setup.exe");
-      const mac = find(".dmg");
-      const winBtn = document.getElementById("dl-win");
-      const macBtn = document.getElementById("dl-mac");
-      if (win && winBtn) winBtn.href = win.browser_download_url;
-      if (mac && macBtn) macBtn.href = mac.browser_download_url;
-    } catch (e) {
-      /* offline / API indisponível — mantém o link pra página de releases */
-    }
-  })();
-</script>
 </body>
 </html>
