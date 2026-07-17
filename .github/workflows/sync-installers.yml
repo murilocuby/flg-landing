@@ -1,0 +1,39 @@
+name: sync-installers
+
+# Mantém os instaladores da landing SEMPRE na versão mais recente publicada no
+# flg-releases — sem passo manual. Roda a cada 3h e também pode ser disparado à
+# mão (Actions → sync-installers → Run workflow) logo após publicar uma versão.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar os instaladores mais recentes do flg-releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release download --repo murilocuby/flg-releases -p "*_x64-setup.exe" --clobber
+          mv -f *_x64-setup.exe FLG-Club-Deal-Setup.exe
+          gh release download --repo murilocuby/flg-releases -p "*_universal.dmg" --clobber
+          mv -f *_universal.dmg FLG-Club-Deal.dmg
+
+      - name: Commitar se algo mudou
+        run: |
+          git config user.name "flg-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain FLG-Club-Deal-Setup.exe FLG-Club-Deal.dmg)" ]; then
+            git add FLG-Club-Deal-Setup.exe FLG-Club-Deal.dmg
+            git commit -m "sync: instaladores mais recentes do flg-releases"
+            git push
+            echo "Landing atualizada para a versao mais recente."
+          else
+            echo "Ja estava na versao mais recente — nada a fazer."
+          fi
