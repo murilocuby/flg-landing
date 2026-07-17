@@ -22,8 +22,14 @@ jobs:
         run: |
           gh release download --repo murilocuby/flg-releases -p "*_x64-setup.exe" --clobber
           mv -f *_x64-setup.exe FLG-Club-Deal-Setup.exe
-          gh release download --repo murilocuby/flg-releases -p "*_universal.dmg" --clobber
-          mv -f *_universal.dmg FLG-Club-Deal.dmg
+          # O .dmg (Mac) pode não existir no release mais recente (ex.: só saiu
+          # build Windows). Isso NÃO pode derrubar o sync do instalador Windows —
+          # mantém o .dmg atual do repo quando não houver um novo.
+          if gh release download --repo murilocuby/flg-releases -p "*_universal.dmg" --clobber; then
+            mv -f *_universal.dmg FLG-Club-Deal.dmg
+          else
+            echo "Sem .dmg no release mais recente — mantendo o instalador Mac atual."
+          fi
 
       - name: Commitar se algo mudou
         run: |
